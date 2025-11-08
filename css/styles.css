@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 
-/* add these animations at the top of your css file */
-
 @keyframes fadeUp {
 	from { opacity: 0; transform: translateY(20px); }
-	to   { opacity: 1; transform: translateY(0); }
+	to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInSimple {
 	from { opacity: 0; }
-	to   { opacity: 1; }
+	to { opacity: 1; }
 }
 
 @keyframes float {
@@ -17,14 +15,42 @@
 	50% { transform: translateY(-10px); }
 }
 
-a {
-	cursor: pointer;
+@keyframes sunRise {
+  to { transform: translateX(-50%) translateY(0); }
 }
 
-/* page load animations */
-body {
-	animation: fadeUp 0.6s ease;
+@keyframes wiggle {
+	0%, 100% { transform: rotate(0deg); }
+	25% { transform: rotate(-3deg); }
+	75% { transform: rotate(3deg); }
 }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  25% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  75% { opacity: 0.3; transform: scale(0.9); }
+}
+
+@keyframes drawStroke {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+	overflow-y: auto;
+	transition: background 1s ease;
+}
+
+a { cursor: pointer; }
 
 .hero-text h1 {
 	animation: fadeUp 0.8s ease forwards;
@@ -50,84 +76,32 @@ body {
 	opacity: 0;
 }
 
-/* .profile-image {
-	animation: fadeInSimple 1s ease 0.4s forwards;
-	opacity: 0;
-} */
-
 .sun {
-	animation: fadeInSimple 0.3s ease 0.6s forwards;
-	opacity: 0;
+	animation: sunRise 1s ease-out forwards;
 }
 
 .cloud-container {
 	animation: float 3s ease-in-out infinite;
 }
 
-/* section transitions */
-/* .right-section {
-	transition: opacity 0.5s ease, transform 0.5s ease;
-} */
-
 .right-section.about,
-.right-section.work {
+.right-section.work,
+.about-content,
+.skills-section,
+.offline-section {
 	animation: fadeUp 0.6s ease;
 }
 
-/* background transitions */
-body {
-	transition: background 1s ease;
+.tabcontent,
+.project-info {
+	animation: fadeInSimple 0.6s ease;
 }
 
-/* hover effects - nav wheel */
-.nav-wedge {
-	transition: fill 0.3s ease;
+.portfolio-imgs {
+	animation: fadeInSimple 0.6s ease 0.2s forwards;
+	opacity: 0;
 }
 
-.nav-label {
-	transition: opacity 0.3s ease, transform 0.2s ease;
-}
-
-.nav-label:hover {
-	transform: scale(1.05);
-}
-
-/* hover effects - social icons */
-.social-icon {
-	transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-	transform: scale(1.1);
-}
-
-.social-icon svg {
-	transition: fill 0.3s ease;
-}
-
-/* hover effects - buttons */
-.tab button {
-	transition: all 0.3s ease, transform 0.2s ease;
-}
-
-.tab button:hover {
-	transform: scale(1.05);
-}
-
-/* hover effects - project cards */
-.project-card {
-	transition: transform 0.3s ease;
-}
-
-.portfolio-imgs img {
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portfolio-imgs img {
-	box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-}
-
-/* skill tags entrance */
 .skill-tag {
 	animation: fadeUp 0.5s ease forwards;
 	opacity: 0;
@@ -140,29 +114,72 @@ body {
 .skill-tag:nth-child(5) { animation-delay: 0.5s; }
 .skill-tag:nth-child(6) { animation-delay: 0.6s; }
 .skill-tag:nth-child(7) { animation-delay: 0.7s; }
+.skill-tag:nth-child(8) { animation-delay: 0.8s; }
+.skill-tag:nth-child(9) { animation-delay: 0.9s; }
 
-/* content sections fade in */
-.about-content,
-.skills-section,
-.offline-section {
-	animation: fadeUp 0.6s ease;
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  transition: opacity 0.6s ease;
 }
 
-/* work content animations */
-.tabcontent {
-	animation: fadeUp 0.5s ease;
+.home-bg { background: linear-gradient(135deg, #F785A0 0%, #F69D0D 100%); }
+.about-bg { background: linear-gradient(135deg, #4BAAF6 0%, #258EE8 100%); }
+.work-bg { background: linear-gradient(135deg, #101930 0%, #1E3985 100%); }
+
+.nav-wedge {
+	transition: fill 0.3s ease;
 }
 
-.project-info {
-	animation: fadeInSimple 0.6s ease;
+.nav-wedge:hover,
+.nav-wedge.active {
+	fill: rgba(255,255,255,0.15);
 }
 
-.portfolio-imgs {
-	animation: fadeInSimple 0.6s ease 0.2s forwards;
-	opacity: 0;
+.nav-label {
+	transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
-/* link hover effects */
+.nav-label:hover {
+	transform: scale(1.05);
+}
+
+.social-icon {
+	transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+	transform: scale(1.1);
+	background: white;
+}
+
+.social-icon svg {
+	transition: fill 0.3s ease;
+}
+
+.social-icon:hover svg {
+	fill: #ff9a9e;
+}
+
+.tab button {
+	transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.tab button:hover {
+	transform: scale(1.05);
+	background-color: rgba(255,255,255,0.2);
+}
+
+.project-card {
+	transition: transform 0.3s ease;
+}
+
+.portfolio-imgs img {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
 .project-info a {
 	transition: all 0.3s ease, transform 0.2s ease;
 }
@@ -172,7 +189,6 @@ body {
 	box-shadow: 0 4px 12px rgba(255,255,255,0.3);
 }
 
-/* hamburger menu animation */
 .hamburger span {
 	transition: all 0.3s ease;
 }
@@ -185,22 +201,16 @@ body {
 	transform: translateY(-2px);
 }
 
-/* end animations */
-
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+.right-section {
+	transition: opacity 0.5s ease;
 }
 
-body {
-	font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-	overflow-y: auto;
-	background: linear-gradient(135deg, 
-	#F785A0 0%,
-	#F69D0D 100%
-	);
+.skill-inner {
+	transition: transform 0.2s ease;
+}
+
+.skill-tag:hover .skill-inner {
+	animation: wiggle 0.7s ease-in-out infinite;
 }
 
 .home-page {
@@ -225,7 +235,11 @@ body {
 }
 
 .hero-text {
-	min-width: 21.4em;
+	min-width: 36vw;
+}
+
+.hero-text-container {
+	min-height: 26vh;
 }
 
 .role-text h2 {
@@ -256,7 +270,16 @@ h2,
 }
 
 .radial-nav,
-.social-icons {
+.social-icons,
+.cloud-container,
+.about-content,
+.skills-section,
+.offline-section,
+h1.about,
+h1.work,
+.mobile-h2,
+.stars-container,
+.moon {
 	display: none;
 }
 
@@ -271,7 +294,7 @@ h2,
 }
 
 .role-text {
-	height:0;
+	height: 0;
 	font-size: 32px;
 	font-weight: 300;
 	color: white;
@@ -306,11 +329,15 @@ h2,
 	max-height: 150px;
 	bottom: 0;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateX(-50%) translateY(100%);
 	position: fixed;
 	background: #ffd700;
 	z-index: 1;
 	border-radius: 50% 50% 0 0;
+}
+
+.sun.risen {
+	transform: translateX(-50%) translateY(0);
 }
 
 .menu-toggle {
@@ -336,7 +363,6 @@ h2,
 	height: 3px;
 	background: white;
 	border-radius: 2px;
-	transition: all 0.3s;
 }
 
 .mobile-nav {
@@ -345,7 +371,7 @@ h2,
 	right: -100%;
 	width: 70%;
 	height: 100vh;
-	background: rgba(255, 255, 255, 0.3);  /* glass */
+	background: rgba(255, 255, 255, 0.3);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	display: flex;
@@ -363,11 +389,6 @@ h2,
 	font-size: 36px;
 	font-weight: 300;
 	text-decoration: none;
-	transition: opacity 0.3s;
-}
-
-.mobile-nav a:hover {
-	opacity: 0.7;
 }
 
 .menu-toggle:checked ~ .mobile-nav {
@@ -384,10 +405,6 @@ h2,
 
 .menu-toggle:checked ~ .hamburger span:nth-child(3) {
 	transform: rotate(-45deg) translate(10px, -10px);
-}
-
-.mobile-h2 {
-	display:none;
 }
 
 @media (min-width: 815px) {
@@ -450,17 +467,8 @@ h2,
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		top: 0;
-		left: 0;
+		inset: 0;
 		transform: rotate(-60deg);
-	}
-
-	.nav-wedge:hover {
-		fill: rgba(255,255,255,0.15);
-	}
-
-	.nav-wedge.active {
-		fill: rgba(255,255,255,0.15);
 	}
 
 	.wheel-circle {
@@ -502,7 +510,6 @@ h2,
 		font-size: max(25px, 1.5vw);
 		font-weight: 300;
 		cursor: pointer;
-		transition: opacity 0.3s;
 		white-space: nowrap;
 		text-decoration: none;
 		user-select: none;
@@ -516,12 +523,12 @@ h2,
 
 	.nav-label.label-about {
 		bottom: calc(0.3 * max(250px, 15vw));
-		left: calc(0.15 * max(250px, 15vw));
+        right: calc(0.13 * max(250px, 15vw));
 	}
 
 	.nav-label.label-work {
 		bottom: calc(0.25 * max(250px, 15vw));
-		right: calc(0.15 * max(250px, 15vw));
+		left: calc(0.2 * max(250px, 15vw));
 		text-align: center;
 	}
 
@@ -539,22 +546,44 @@ h2,
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
-		transition: all 0.3s;
 		text-decoration: none;
+		position: relative;
 	}
 
-	.social-icon:hover {
-		background: white;
+	.icon-svg {
+		width: 50%;
+		height: 50%;
+		fill: white;
+	}
+	.hover-label {
+		position: absolute;
+		left: calc(100% + 20px);
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.label-stroke {
+		fill: none;
+		stroke: white;
+		stroke-width: 2;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+
+	.social-icon:hover .hover-label {
+		opacity: 1;
+	}
+
+	.social-icon:hover .label-stroke {
+		animation: drawStroke 1.5s ease forwards;
 	}
 
 	.social-icon svg {
 		width: 50%;
 		height: 50%;
 		fill: white;
-	}
-
-	.social-icon:hover svg {
-		fill: #ff9a9e;
 	}
 
 	.right-section {
@@ -623,26 +652,6 @@ h2,
 	}
 }
 
-/* about styles */
-
-/* hide about content and cloud by default */
-.cloud-container,
-.about-content,
-.skills-section,
-.offline-section {
-	display: none;
-}
-
-h1.about {
-	display: none;
-}
-
-h1.work {
-	display: none;
-}
-
-/* hide all right sections by default, js will show the active one */
-
 .right-section.about,
 .right-section.work {
 	display: none;
@@ -652,7 +661,6 @@ h1.work {
 	display: flex;
 }
 
-/* when about section is visible */
 .right-section.about {
 	padding: 32px 16px;
 	flex-direction: column;
@@ -670,15 +678,16 @@ h1.work {
 	display: block;
 }
 
-/* when work section is visible */
 .right-section.work {
 	padding: 16px 16px;
 	display: flex;
 	flex-direction: column;
 	overflow-y: auto;
+	height: 85vh;
+	overflow: hidden;
+	padding: 0;
 }
 
-/* cloud styling */
 .cloud-container {
 	width: 100%;
 	max-width: 300px;
@@ -692,7 +701,6 @@ h1.work {
 	height: auto;
 }
 
-/* content sections */
 .about-content h2,
 .skills-section h2,
 .offline-section h2 {
@@ -716,13 +724,15 @@ h1.work {
 	gap: 12px;
 }
 
-.skill-tag {
+.skill-inner {
 	background: rgba(255, 255, 255, 0.3);
 	color: white;
 	padding: 12px 24px;
 	border-radius: 25px;
 	font-size: max(16px, 2vh);
 	font-weight: 300;
+	cursor: pointer;
+	display: block;
 }
 
 @media (min-width: 769px) {
@@ -731,16 +741,6 @@ h1.work {
 		padding: 0 16px;
 		justify-content: center;
 	}
-}
-
-/* My Work Page */
-
-.right-section.work {
-	display: flex;
-	flex-direction: column;
-	height: 85vh;
-	overflow: hidden;
-	padding: 0;
 }
 
 .work-header {
@@ -753,7 +753,7 @@ h1.work {
 .work-header h1 {
 	margin: 0;
 	color: white;
-	font-size: 3em;
+	font-size: max(48px, 3em);
 }
 
 .tab {
@@ -765,17 +765,12 @@ h1.work {
 	background-color: transparent;
 	border: 3px solid white;
 	cursor: pointer;
-	transition: all .3s ease;
-	font-size: 20px;
+	font-size: max(20px, 1.2vw);
 	border-radius: 50%;
 	color: white;
-	width: 60px;
-	height: 60px;
+	width: max(60px, 4vw);
+	height: max(60px, 4vw);
 	font-weight: 600;
-}
-
-.tab button:hover {
-	background-color: rgba(255,255,255,0.2);
 }
 
 .tab button.active {
@@ -802,14 +797,14 @@ h1.work {
 .project-info h3 {
 	margin: 0 0 5px 0;
 	color: #ffffff;
-	font-size: 1.5em;
+	font-size: max(24px, 1.5vw);
 }
 
 .project-info h4 {
 	margin: 0 0 20px 0;
 	color: #ffffff;
 	font-weight: 400;
-	font-size: 1.1em;
+	font-size: max(18px, 1.1vw);
 }
 
 .tags {
@@ -824,13 +819,14 @@ h1.work {
 	margin: 4px 8px 4px 0;
 	border-radius: 20px;
 	font-style: italic;
-	font-size: 0.9em;
+	font-size: max(14px, 0.9vw);
 }
 
 .summary {
 	color: #ffffff;
 	line-height: 1.7;
 	margin: 20px 0;
+	font-size: max(16px, 1vw);
 }
 
 .project-info a {
@@ -840,8 +836,8 @@ h1.work {
 	padding: 12px 35px;
 	text-decoration: none;
 	font-weight: 600;
-	transition: all 0.2s ease;
 	margin-top: 10px;
+	font-size: max(16px, 1vw);
 }
 
 .project-info a:hover {
@@ -851,6 +847,9 @@ h1.work {
 
 .portfolio-imgs {
 	margin-top: 30px;
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
 }
 
 .portfolio-imgs figure {
@@ -863,13 +862,6 @@ h1.work {
 	border-radius: 8px;
 }
 
-.portfolio-imgs {
-	margin-top: 30px;
-	display: flex;
-	gap: 20px;
-	flex-wrap: wrap;
-}
-
 .portfolio-imgs.thirdspace figure {
 	margin: 0;
 	flex: 1;
@@ -877,9 +869,7 @@ h1.work {
 }
 
 .portfolio-imgs.thirdspace img {
-	max-width: 100%;
 	box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-	border-radius: 8px;
 }
 
 @media (max-width: 768px) {
@@ -892,17 +882,9 @@ h1.work {
 	}
 }
 
-.stars-container,
-.moon {
-  display: none;
-}
-
 .stars-container {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
 }
@@ -912,25 +894,6 @@ h1.work {
   background: white;
   border-radius: 50%;
   animation: twinkle 5s ease-in-out infinite;
-}
-
-@keyframes twinkle {
-  0%, 100% { 
-    opacity: 1; 
-    transform: scale(1);
-  }
-  25% { 
-    opacity: 0.2; 
-    transform: scale(0.8);
-  }
-  50% { 
-    opacity: 1; 
-    transform: scale(1.2);
-  }
-  75% { 
-    opacity: 0.3; 
-    transform: scale(0.9);
-  }
 }
 
 .moon {
@@ -945,24 +908,75 @@ h1.work {
   z-index: 1;
 }
 
-.moon::before {
+.moon::before,
+.moon::after {
   content: '';
   position: absolute;
-  width: 20%;
-  height: 20%;
   background: #DDD5C7;
   border-radius: 50%;
+}
+
+.moon::before {
+  width: 20%;
+  height: 20%;
   top: 30%;
   left: 25%;
 }
 
 .moon::after {
-  content: '';
-  position: absolute;
   width: 15%;
   height: 15%;
-  background: #DDD5C7;
-  border-radius: 50%;
   bottom: 25%;
   right: 30%;
+}
+
+.mobile-nav .mobile-social-icons {
+	display: flex;
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.mobile-nav .mobile-social-icons .social-icon {
+	width: 60px;
+	height: 60px;
+	border: 3px solid white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.mobile-nav .mobile-social-icons .social-icon svg {
+	width: 50%;
+	height: 50%;
+	fill: white;
+}
+
+.hover-label {
+	position: absolute;
+	left: calc(100% + 30px);
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0;
+	pointer-events: none;
+}
+
+.label-stroke {
+	fill: none;
+	stroke: white;
+	stroke-width: 1.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+	transition: stroke-dashoffset 1.2s ease;
+}
+
+.social-icon:hover .hover-label {
+	opacity: 1;
+}
+
+.social-icon:hover .label-stroke {
+	stroke-dashoffset: 0;
 }

@@ -112,7 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		`;
 		h2Home.style.display = 'flex';
 		
-		document.body.style.background = 'linear-gradient(135deg, #F785A0 0%, #F69D0D 100%)';
+		document.querySelector('.home-bg').style.opacity = '1';
+        setTimeout(() => {
+            document.querySelector('.about-bg').style.opacity = '0';
+            document.querySelector('.work-bg').style.opacity = '0';
+        }, 50);
 		document.getElementById('menu-toggle').checked = false;
         setActiveWedge('home');
 	}
@@ -134,7 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		heroText.innerHTML = `<h1>About</h1>`;
 		h2Home.style.display = 'none';
 		
-		document.body.style.background = 'linear-gradient(135deg, #4BAAF6 0%, #258EE8 100%)';
+        document.querySelector('.about-bg').style.opacity = '1';
+        setTimeout(() => {
+            document.querySelector('.home-bg').style.opacity = '0';
+            document.querySelector('.work-bg').style.opacity = '0';
+        }, 50);
 		document.getElementById('menu-toggle').checked = false;
         setActiveWedge('about');
 	}
@@ -156,7 +164,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		heroText.innerHTML = `<h1>My Work</h1>`;
 		h2Home.style.display = 'none';
 		
-		document.body.style.background = 'linear-gradient(135deg, #101930 0%, #1E3985 100%)';
+		document.querySelector('.work-bg').style.opacity = '1';
+        setTimeout(() => {
+            document.querySelector('.home-bg').style.opacity = '0';
+            document.querySelector('.about-bg').style.opacity = '0';
+        }, 50);
 		document.getElementById('menu-toggle').checked = false;
 		
 		// click default tab if it exists
