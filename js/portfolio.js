@@ -196,4 +196,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	// default state
 	showHome();
+    document.querySelector('.sun').classList.add('risen');
 });
