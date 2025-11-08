@@ -244,10 +244,6 @@ a { cursor: pointer; }
 	min-width: 36vw;
 }
 
-.hero-text-container {
-	min-height: 26vh;
-}
-
 .role-text h2 {
 	height: 0;
 }
@@ -434,6 +430,10 @@ h1.work,
 		max-width: 50%;
 	}
 
+	.hero-text-container {
+		min-height: 26vh;
+	}
+
 	.hero-text h1 {
 		font-size: max(80px, 6vw);
 	}
@@ -607,7 +607,7 @@ h1.work,
 		font-size: max(32px, 3vw);
 	}
 
-	.moon {
+	.moon.moon {
 		top: 25%;
 		right: 5%;
 	}
@@ -899,7 +899,7 @@ h1.work,
   position: absolute;
   background: white;
   border-radius: 50%;
-  animation: twinkle 5s ease-in-out infinite;
+  animation: twinkle 3.5s ease-in-out infinite;
 }
 
 .moon {
