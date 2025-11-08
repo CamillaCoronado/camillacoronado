@@ -1,61 +1,203 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<title>Camilla Coronado</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	</head>
-	<body>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>Camilla Coronado</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<script src="js/portfolio.js"></script>
+<body>
+	<!-- hamburger menu toggle (pure css) -->
+	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+	<label for="menu-toggle" class="hamburger">
+		<span></span>
+		<span></span>
+		<span></span>
+	</label>
+	<nav class="mobile-nav">
+		<a role="button">Home</a>
+		<a role="button">About</a>
+		<a role="button">My work</a>
+	</nav>
 
-		<div class= "logo-container">
-			<a href= "/"><figure></figure></a>
+	<div class="home-page">
+		<div class="left-section">
+			<div class="left-aligned">
+				<div class="hero-text-container">
+					<div class="hero-text">
+						<h1 class= "home">Hi there.</h1>
+						<h1 class= "home">I'm Camilla</h1>
+					</div>
+					<div class="role-text home">
+						<h2 class="home">Front End Developer</h2>
+					</div>
+				</div>
+				
+
+				<div class="cloud-container">
+					<svg class="cloud" viewBox="80 30 260 160" xmlns="http://www.w3.org/2000/svg">
+						<path d="M 160 145 Q 130 145 125 120 Q 125 95 150 88 Q 155 60 185 55 Q 215 55 230 70 Q 260 62 280 80 Q 305 82 308 108 Q 310 130 290 142 Q 280 152 250 152 L 175 152 Q 160 152 160 145 Z" fill="rgba(255, 255, 255, 0.5)"/>
+					</svg>
+				</div>
+
+		
+		<div class="menu-container-copy">
+			<div class="radial-nav-social">
+			<nav class="radial-nav">
+				<div class="nav-wheel">
+					<a role="button" class="nav-label label-home">Home</a>
+					<a role="button" class="nav-label label-about">About</a>
+					<a role="button" class="nav-label label-work">My<br />work</a>
+					<svg class="nav-wheel-svg" viewBox="0 0 120 120">
+						<circle cx="60" cy="60" r="57" fill="none" stroke="white" stroke-width="3"/>
+						<line x1="60" y1="60" x2="60" y2="3" stroke="white" stroke-width="3"/>
+						<line x1="60" y1="60" x2="109.36" y2="88.5" stroke="white" stroke-width="3"/>
+						<line x1="60" y1="60" x2="10.64" y2="88.5" stroke="white" stroke-width="3"/>
+						
+						<path class="nav-wedge nav-home-wedge" d="M 60 60 L 60 3 A 57 57 0 0 1 111.96 90 Z" fill="rgba(255,255,255,0)" stroke="none" style="cursor: pointer; transition: fill 0.3s;"/>
+						<path class="nav-wedge nav-about-wedge" d="M 60 60 L 8.04 90 A 57 57 0 0 1 60 3 Z" fill="rgba(255,255,255,0)" stroke="none" style="cursor: pointer; transition: fill 0.3s;"/>
+						<path class="nav-wedge nav-work-wedge" d="M 60 60 L 109.36 88.5 A 57 57 0 0 1 10.64 88.5 Z" fill="rgba(255,255,255,0)" stroke="none" style="cursor: pointer; transition: fill 0.3s;"/>
+					</svg>
+				</div>
+			</nav>
+
+				<div class="social-icons">
+					<a href="https://www.linkedin.com/in/camilla-coronado-01502b160/" target="_blank" class="social-icon">
+						<svg viewBox="0 0 24 24">
+							<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+						</svg>
+					</a>
+					<a href="mailto:camilla.coronado@gmail.com" class="social-icon">
+						<svg viewBox="0 0 24 24">
+							<path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+						</svg>
+					</a>
+					<a href="https://github.com/camillacoronado" target="_blank" class="social-icon">
+						<svg viewBox="0 0 24 24">
+							<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+				<h2 class="mobile-h2">Front End Developer<br>& Designer</h2>
 		</div>
-		<nav>
-			<div class= "logo-container-2">
-				<a href= "/"><figure></figure></a>
 			</div>
-			<ul>
-				<li class= "home underline"><a href= "/"><span>Home</span><figure></figure></a></li>
-				<li class= "about"><a href= "about.html"><span>About</span><figure></figure></a></li>
-				<li class= "my_work"><a href= "my_work.html"><span>My Work</span><figure></figure></a></li>
-				<li class="contact"><a href= "contact.html"><span>Contact Me</span><figure></figure></a></li>
-			</ul>
 
-			<div class= "nav-social">
-				<a href= "https://twitter.com/CamillaCoronado" target="_blank"><figure class= "twitter"></figure></a>
-				<a href= "https://www.linkedin.com/in/camilla-coronado-01502b160/" target="_blank"><figure class= "linked_in"></figure></a>
-				<a href= "https://www.linkedin.com/in/camilla-coronado-01502b160/" target="_blank"><figure class= "insta"></figure></a>
+		</div>
+
+		<div class="right-section home">
+			<div class="profile-image">
+				<img src="./img/camilla-profile.png" alt="Camilla Coronado">
 			</div>
-		</nav>
+		</div>
+		<div class="right-section about">
+			<div class="profile-image">
+				<img src="./img/camilla-profile.png" alt="Camilla Coronado">
+			</div>
 
-		<div class= "home-page">
-			<div class= "intro">
-				<h1>My name is <br>Camilla Coronado</h1>
-				<div class="frame">      
-					<div class="carousel">            
-						<div class="pre">I'm a </div>
-							<div class="change_outer">
-								<div class="change_inner">
-									<div class="element">Front-end Developer</div>
-									<div class="element">UX/UI Designer</div>
-									<div class="element">CSS Master</div>
-									<div class="element">Writer</div>
-									<div class="element">Girl</div>
-									<div class="element">Front-end Developer</div>
-								</div>
+			<div class="about-content">
+				<h2>Me</h2>
+				<p>I've been a front-end developer for over 10 years with expertise in SVG animation, fully responsive design, cross-browser compatibility, and accessibility. I have a serious love for all things CSS. I'm extremely passionate about all my work. I want to make everything better.</p>
+			</div>
+
+			<div class="skills-section">
+				<h2>Skills</h2>
+				<div class="skill-tags">
+					<span class="skill-tag">Typescript</span>
+					<span class="skill-tag">CSS</span>
+					<span class="skill-tag">C++</span>
+					<span class="skill-tag">HTML</span>
+					<span class="skill-tag">Wordpress</span>
+					<span class="skill-tag">Sveltekit</span>
+					<span class="skill-tag">Tailwind</span>
+				</div>
+			</div>
+
+			<div class="offline-section">
+				<h2>Offline</h2>
+				<p>I spend my free time rearranging my space, exploring new ideas, and getting lost in good games.</p>
+			</div>
+		</div>
+		<div class="right-section work">
+			<div class="work-header">
+				<div class="tab">
+					<button class="tablinks" onclick="openProject(event, 'one')" id="defaultOpen">1</button>
+					<button class="tablinks" onclick="openProject(event, 'two')">2</button>
+					<button class="tablinks" onclick="openProject(event, 'three')">3</button>
+					<button class="tablinks" onclick="openProject(event, 'four')">4</button>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div id="one" class="tabcontent">
+					<div class="project-card">
+						<div class="project-info">
+							<h3>ThirdSpace</h3> 
+							<div class="tags">
+								<span class="desc">Design</span>
+								<span class="desc">Development</span>
 							</div>
+							<p class="summary">Thirdspace, which I founded, focused on designing and building the chat interface for a social networking platform. I designed the look and feel, including community challenges and featured messages and implemented the interface based on that design.</p>
+						</div>
+						<div class="portfolio-imgs thirdspace">
+							<figure><img src="img/thirdspace-mobile-1.png"></figure>
+							<figure><img src="img/thirdspace-mobile.png"></figure>
+						</div>
+					</div>
+				</div>
+
+				<div id="two" class="tabcontent">
+					<div class="project-card">
+						<div class="project-info">
+							<h3>Simcluster Analytics</h3>
+							<div class="tags">
+								<span class="desc">Design</span>
+								<span class="desc">Development</span>
+							</div>
+							<p class="summary">For Simulster Analytics, a personal project centered on a video game I enjoy, I developed interactive dashboards with charts and tables, ensured responsive layouts, and optimized performance for large datasets while maintaining clarity and usability.</p> 
+						</div>
+						<div class="portfolio-imgs">
+							<figure><img src="img/sim-analytics-desktop.png"></figure>
+						</div>
+					</div>
+				</div>
+
+				<div id="three" class="tabcontent">
+					<div class="project-card">
+						<div class="project-info">
+							<h3>SFOS</h3>
+							<div class="tags">
+								<span class="desc">Design</span>
+								<span class="desc">Development</span>
+							</div>
+							<p class="summary">At SFOS, a hackathon project and winning entry in SF10X, I designed and implemented the front-end of a web-based service platform. I developed the UI, ensured responsive layouts, and we are actively working on releasing a beta.</p> 
+						</div>
+						<div class="portfolio-imgs">
+							<figure><img src="img/sfos-desktop.png"></figure>
+							<figure><img src="img/sfos-2.png"></figure>
+						</div>
+					</div>
+				</div>
+
+				<div id="four" class="tabcontent">
+					<div class="project-card">
+						<div class="project-info">
+							<h3>FinTech</h3>
+							<div class="tags">
+								<span class="desc">Design</span>
+								<span class="desc">Development</span>
+							</div>
+							<p class="summary">I focused on front-end development for a fintech platform. I implemented responsive layouts, optimized UI performance, and ensured design system consistency while delivering a polished user interface.</p> 
+						</div>
+						<div class="portfolio-imgs">
+							<figure><img src="img/fintech-desktop.png"></figure>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class= info-box>
-				<a class= "info" onclick="myFunction()"> i
-					<figure>
-						<span class="popuptext" id="popup">This site was built from scratch using HTML, CSS, and Javascript</span>
-					</figure>
-				</a>
-			</div>
 		</div>
-	</body>
+	</div>
+	<div class="sun"></div>
+	<div class="moon"></div>
+</body>
 </html>
-
-<script src="js/portfolio.js"></script>
