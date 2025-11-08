@@ -76,6 +76,12 @@ a { cursor: pointer; }
 	opacity: 0;
 }
 
+.links {
+	display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .sun {
 	animation: sunRise 1s ease-out forwards;
 }
@@ -951,6 +957,10 @@ h1.work,
 	width: 50%;
 	height: 50%;
 	fill: white;
+}
+
+.mobile-nav .mobile-social-icons .social-icon:hover {
+	background: transparent;
 }
 
 .hover-label {
